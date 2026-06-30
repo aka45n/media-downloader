@@ -1,3 +1,4 @@
+codex/media-finder-downloader
 # Media Finder Downloader
 
 Chrome extension for finding hard-to-download PDF and image files from the current page without opening DevTools.
