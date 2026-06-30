@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Finder Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header class="toolbar">
+      <div>
+        <h1>Files</h1>
+        <p id="summary">Scanning current tab...</p>
+      </div>
+      <button id="scanButton" class="iconButton" type="button" title="Scan page" aria-label="Scan page">
+        <span aria-hidden="true">&#8635;</span>
+      </button>
+    </header>
+
+    <section class="filters" aria-label="Filters">
+      <label>
+        <input id="pdfFilter" type="checkbox" checked>
+        PDF
+      </label>
+      <label>
+        <input id="imageFilter" type="checkbox" checked>
+        Images
+      </label>
+      <input id="searchInput" type="search" placeholder="Filter by URL or filename" aria-label="Filter by URL or filename">
+    </section>
+
+    <section id="bookRollTools" class="bookRollTools" hidden>
+      <div>
+        <strong>BookRoll PDF</strong>
+        <p id="bookRollSummary">No BookRoll slides collected yet.</p>
+      </div>
+      <div class="bookRollActions">
+        <button id="bookRollCollectButton" type="button">Collect all</button>
+        <button id="bookRollPdfButton" type="button">Download PDF</button>
+      </div>
+    </section>
+
+    <main>
+      <div id="emptyState" class="empty" hidden>No matching PDF or image files found yet.</div>
+      <ul id="candidateList" class="candidateList" aria-label="Download candidates"></ul>
+    </main>
+
+    <footer class="footer">
+      <label class="selectAll">
+        <input id="selectAll" type="checkbox">
+        Select all
+      </label>
+      <button id="downloadSelectedButton" type="button">Download selected</button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

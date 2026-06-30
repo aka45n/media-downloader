@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Media Finder Downloader",
+  "description": "Find and download PDF and image files from the current page without opening DevTools.",
+  "version": "0.1.0",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "sidePanel",
+    "scripting",
+    "storage",
+    "tabs",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "side_panel": {
+    "default_path": "src/popup.html"
+  },
+  "action": {
+    "default_title": "Find downloadable files"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
